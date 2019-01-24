@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "481530749520",
+    "firebase_url": "https://mycasper-131ac.firebaseio.com",
+    "project_id": "mycasper-131ac",
+    "storage_bucket": "mycasper-131ac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:481530749520:android:e2d219d2549dc655",
+        "android_client_info": {
+          "package_name": "com.example.amos_perets.mycasper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "481530749520-a3r5r74uh8es30c1pbkfbsraek2i8g2o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.amos_perets.mycasper",
+            "certificate_hash": "45c8d4af0cb17689814b779519f11d1dbc09f726"
+          }
+        },
+        {
+          "client_id": "481530749520-fpae3dffmik423a15nhkug2g0s462934.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-lmd_Cm6tjnBSu4zIA94LcgadS1Fw39s"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "481530749520-fpae3dffmik423a15nhkug2g0s462934.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/dialog_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="add category"
+        android:gravity="center_horizontal"
+        android:textSize="20sp"/>
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/edit_text_enter_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="enter name"
+        android:inputType="text"
+        android:imeOptions="actionNext"
+        android:nextFocusDown="@id/edit_text_enter_money"/>
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/edit_text_enter_money"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="enter amount money"
+        android:imeOptions="actionNext"
+        android:nextFocusDown="@id/button_add"/>
+
+    <Button
+        android:id="@+id/button_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="add"
+        android:layout_gravity="center"/>
+
+</LinearLayout>

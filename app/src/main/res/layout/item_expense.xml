@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="65dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layoutDirection="rtl"
+    tools:targetApi="jelly_bean_mr1"
+    android:background="#ffffff"
+    android:layout_margin="3dp">
+
+    <TextView
+        android:id="@+id/text_date"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="5dp"
+        android:textColor="#333"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMinTextSize="10dp"
+        android:autoSizeMaxTextSize="14dp"
+        android:text="18-2018-22"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/constraint_details"
+        android:background="@drawable/regular_border"
+        android:layout_margin="5dp"/>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/top_frame_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+    <android.support.constraint.Guideline
+        android:id="@+id/bottom_frame_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="1" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraint_details"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/top_frame_guideline"
+        app:layout_constraintBottom_toBottomOf="@id/bottom_frame_guideline">
+
+        <android.support.constraint.Guideline
+            android:id="@+id/start_title_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.55" />
+
+        <TextView
+            android:id="@+id/text_title"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="right|center_vertical"
+            android:padding="5dp"
+            android:text="קטגוריה"
+            android:textColor="#333"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/start_title_guideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <android.support.constraint.Guideline
+            android:id="@+id/end_text_amount_money_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.75" />
+
+        <TextView
+            android:id="@+id/text_amount_money"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="2000"
+            android:textColor="#f72424"
+            android:textSize="15sp"
+            android:background="@drawable/regular_border"
+            app:layout_constraintEnd_toEndOf="@id/end_text_amount_money_guideline"
+            app:layout_constraintStart_toEndOf="@id/text_title"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <android.support.constraint.Guideline
+            android:id="@+id/start_button_edit_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.77" />
+        <android.support.constraint.Guideline
+            android:id="@+id/end_button_edit_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.87" />
+
+        <ImageView
+            android:id="@+id/button_edit"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:scaleType="center"
+            android:background="@drawable/icon_edit"
+            app:layout_constraintBottom_toBottomOf="@id/bottom_button_delete_guideline"
+            app:layout_constraintTop_toTopOf="@id/top_button_delete_guideline"
+            app:layout_constraintStart_toEndOf="@id/start_button_edit_guideline"
+            app:layout_constraintEnd_toEndOf="@id/end_button_edit_guideline"/>
+
+        <android.support.constraint.Guideline
+            android:id="@+id/end_button_delete_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.89" />
+        <android.support.constraint.Guideline
+            android:id="@+id/start_button_delete_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.99" />
+        <android.support.constraint.Guideline
+            android:id="@+id/top_button_delete_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.03" />
+        <android.support.constraint.Guideline
+            android:id="@+id/bottom_button_delete_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.97" />
+
+        <ImageView
+            android:id="@+id/button_delete"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:scaleType="fitXY"
+            app:layout_constraintDimensionRatio="1:1"
+            android:src="@drawable/icon_delete"
+            app:layout_constraintBottom_toBottomOf="@id/bottom_button_delete_guideline"
+            app:layout_constraintTop_toTopOf="@id/top_button_delete_guideline"
+            app:layout_constraintEnd_toEndOf="@id/end_button_delete_guideline"
+            app:layout_constraintStart_toStartOf="@id/start_button_delete_guideline"/>
+
+
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>
