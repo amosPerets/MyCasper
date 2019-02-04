@@ -18,18 +18,39 @@ import java.util.List;
 
 public class ShowDialog extends Dialog implements View.OnClickListener {
 
+    /**
+     * title of dialog
+     */
     private TextView tvTitle;
 
+    /**
+     * edit text of name
+     */
     private EditText etEnterName;
 
+    /**
+     * edit text of amount money
+     */
     private EditText etEnterAmountMoney;
 
+    /**
+     * add the input
+     */
     private Button btnAdd;
 
+    /**
+     * model
+     */
     private IBaseHeader baseHeader;
 
+    /**
+     * action add / edit
+     */
     private DataAction dataAction;
 
+    /**
+     * object
+     */
     private Object object;
 
     private static List<DialogListener> dialogListenerList = new ArrayList<>();
@@ -46,7 +67,7 @@ public class ShowDialog extends Dialog implements View.OnClickListener {
     }
 
     /**
-     * fina all views
+     * init all views
      */
     private void initViews() {
         btnAdd.setOnClickListener(this);
