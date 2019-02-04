@@ -55,12 +55,12 @@ dependencies {
     // firebase-auth
     implementation 'com.androidhuman.rxfirebase2:firebase-auth:16.0.2.0'
 
-// required dependency: firebase-core
+    // required dependency: firebase-core
     implementation 'com.androidhuman.rxfirebase2:firebase-core:16.0.3.0'
-// firebase-database
+    // firebase-database
     implementation 'com.androidhuman.rxfirebase2:firebase-database:16.0.1.1'
     implementation 'com.google.firebase:firebase-core:16.0.5'
-// required dependency: firebase-core
+    // required dependency: firebase-core
     implementation 'com.androidhuman.rxfirebase2:firebase-core:16.0.3.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'

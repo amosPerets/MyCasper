@@ -101,14 +101,6 @@ public class MainCategoryViewHolder extends RecyclerView.ViewHolder
     }
 
 
-    private void animateView(View view) {
-        ValueAnimator scaleAnimator = ObjectAnimator.ofPropertyValuesHolder(view,
-                PropertyValuesHolder.ofFloat("scaleX", 1f, 0.6f, 1f),
-                PropertyValuesHolder.ofFloat("scaleY", 1f, 0.6f, 1f));
-        scaleAnimator.setDuration(VIEW_ANIMATE_DURATION);
-        scaleAnimator.start();
-    }
-
     @Override
     public boolean onTouch(View view, MotionEvent event) {
 
@@ -120,13 +112,11 @@ public class MainCategoryViewHolder extends RecyclerView.ViewHolder
 
         switch (view.getId()) {
             case R.id.button_edit:
-//                view.animate().scaleY(scaleIcon).scaleX(scaleIcon).setDuration(200).start();
                 view.setScaleY(scaleIcon);
                 view.setScaleX(scaleIcon);
                 break;
 
             case R.id.button_delete:
-//                view.animate().scaleY(scaleIcon).scaleX(scaleIcon).setDuration(200).start();
                 view.setScaleY(scaleIcon);
                 view.setScaleX(scaleIcon);
                 break;

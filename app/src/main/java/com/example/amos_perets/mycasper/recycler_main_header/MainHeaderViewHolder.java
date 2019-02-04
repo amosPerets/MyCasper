@@ -1,5 +1,7 @@
 package com.example.amos_perets.mycasper.recycler_main_header;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
 import android.animation.ValueAnimator;
@@ -16,7 +18,7 @@ import com.example.amos_perets.mycasper.models.header.IHeader;
 import com.example.amos_perets.mycasper.recycler_main_category.AdapterMainCategory;
 
 public class MainHeaderViewHolder extends RecyclerView.ViewHolder
-        implements View.OnClickListener, View.OnTouchListener {
+        implements View.OnClickListener, View.OnTouchListener, AdapterMainHeader.ChangeShowCategoriesListener {
 
     private static final long VIEW_ANIMATE_DURATION = 300;
 
@@ -30,14 +32,22 @@ public class MainHeaderViewHolder extends RecyclerView.ViewHolder
 
     private ImageView ivEdit;
 
+    private View itemHeader;
+
     private float scaleIcon;
 
     private Button btnAddCategory;
 
     private AdapterMainCategory adapterMainCategory;
 
-    public MainHeaderViewHolder(View itemView) {
+    private RecyclerView recyclerViewCategory;
+
+    private boolean isOpen;
+
+    public MainHeaderViewHolder(View itemView, boolean isOpen) {
         super(itemView);
+
+        this.isOpen = isOpen;
 
         bindViews();
         initViews();
@@ -70,11 +80,13 @@ public class MainHeaderViewHolder extends RecyclerView.ViewHolder
         ivDelete = itemView.findViewById(R.id.button_delete);
         ivEdit = itemView.findViewById(R.id.button_edit);
         btnAddCategory = itemView.findViewById(R.id.butt_add_new_category);
-
+        itemHeader = itemView.findViewById(R.id.item_header_title);
     }
 
     private void initRecyclerView() {
-        RecyclerView recyclerViewCategory = itemView.findViewById(R.id.recycler_category_list);
+        recyclerViewCategory = itemView.findViewById(R.id.recycler_category_list);
+        recyclerViewCategory.setScaleY(isOpen ? 0 : 1);
+        recyclerViewCategory.setVisibility(isOpen ? View.GONE : View.VISIBLE);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(itemView.getContext());
         recyclerViewCategory.setLayoutManager(linearLayoutManager);
         adapterMainCategory = new AdapterMainCategory();
@@ -85,7 +97,6 @@ public class MainHeaderViewHolder extends RecyclerView.ViewHolder
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.button_edit:
-//                animateView(view);
                 iHeader.onClickEdit();
                 break;
 
@@ -111,13 +122,11 @@ public class MainHeaderViewHolder extends RecyclerView.ViewHolder
 
         switch (view.getId()) {
             case R.id.button_edit:
-//                view.animate().scaleY(scaleIcon).scaleX(scaleIcon).setDuration(200).start();
                 view.setScaleY(scaleIcon);
                 view.setScaleX(scaleIcon);
                 break;
 
             case R.id.button_delete:
-//                view.animate().scaleY(scaleIcon).scaleX(scaleIcon).setDuration(200).start();
                 view.setScaleY(scaleIcon);
                 view.setScaleX(scaleIcon);
                 break;
@@ -126,12 +135,14 @@ public class MainHeaderViewHolder extends RecyclerView.ViewHolder
         return false;
     }
 
-    private void animateView(View view) {
-        ValueAnimator scaleAnimator = ObjectAnimator.ofPropertyValuesHolder(view,
-                PropertyValuesHolder.ofFloat("scaleX", 1f, 0.6f, 1f),
-                PropertyValuesHolder.ofFloat("scaleY", 1f, 0.6f, 1f));
-        scaleAnimator.setDuration(VIEW_ANIMATE_DURATION);
-        scaleAnimator.start();
-    }
+    @Override
+    public void onChangeShowCategories(boolean isOpen) {
+        recyclerViewCategory.animate().scaleY(isOpen ? 0 : 1).setListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                recyclerViewCategory.setVisibility(isOpen ? View.GONE : View.VISIBLE);
+            }
+        }).setDuration(300).start();
 
+    }
 }

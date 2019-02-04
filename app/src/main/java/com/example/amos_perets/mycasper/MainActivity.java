@@ -32,11 +32,15 @@ public class MainActivity extends AppCompatActivity {
 
     private Button buttonAddHeader;
 
+    private Button buttonOpenOrCloseHeaders;
+
     private ShowDialog viewDialog;
 
     private AdapterMainHeader adapterMainHeader;
 
     private Toolbar toolbar;
+
+    private boolean isOpen = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,10 +52,13 @@ public class MainActivity extends AppCompatActivity {
         initObjects();
         initRecyclerView();
 
-        buttonAddHeader.setOnClickListener(new View.OnClickListener() {
+        buttonAddHeader.setOnClickListener(v -> MainActivity.this.showDialog());
+        buttonOpenOrCloseHeaders.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MainActivity.this.showDialog();
+                buttonOpenOrCloseHeaders.setText(isOpen ? "OPEN" : "CLOSE");
+                adapterMainHeader.changeShowCategories(isOpen);
+                isOpen = !isOpen;
             }
         });
         setSupportActionBar(toolbar);
@@ -80,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         buttonAddHeader = toolbar.findViewById(R.id.button_add_new_header);
         mainRecyclerView = findViewById(R.id.recycler_headers_list);
+        buttonOpenOrCloseHeaders = findViewById(R.id.button_open_close_headers);
     }
 
 }
