@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         initObjects();
         initRecyclerView();
 
-        buttonAddHeader.setOnClickListener(v -> MainActivity.this.showDialog());
+        buttonAddHeader.setOnClickListener(v -> managerData.createHeader());
         buttonOpenOrCloseHeaders.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,10 +63,6 @@ public class MainActivity extends AppCompatActivity {
         });
         setSupportActionBar(toolbar);
 
-    }
-
-    private void showDialog() {
-        managerData.createHeader();
     }
 
     private void initObjects() {
